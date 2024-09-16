@@ -3,29 +3,34 @@
     name : 'app',
     data() {
       return {
-        x: 100,
-        y: 20,
+        count : 0,
+        name : 'Ann',
+        name_list : ['Ann', 'Peggy', 'Allen'],
       }
     },
     methods: {
-      myFunction() {
-        return this.x * this.y
+      plaus_Function() {
+        return this.count ++
+      },
+      minus_Function() {
+        return this.count --
+      },
+      name_Function() {
+        this.name = this.name_list[this.count]
       }
     }
   }
 </script>
 
 <template>
-  x : {{ x }}
-  <br>
-  y : {{ y }}
-  <br>
-  x * y = {{ myFunction() }}
+  <p>number : {{ count }}</p>
+  <p v-if="count>=0 & count<=2">name : {{ name }}</p>
+  <p v-else>no people</p>
+
+  <button v-on:click="minus_Function(), name_Function()"> < </button>
+  <button v-on:click="plaus_Function(), name_Function()"> > </button>
 </template>
 
 <style scoped>
-  p {
-    color: white;
-    background-color: chocolate;
-  }
+
 </style>
