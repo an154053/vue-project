@@ -7,7 +7,7 @@
 </script>
 
 <template>
-    <label for="">count : {{num}}</label>
+    <label >count : {{num}}</label>
     <br>
     <button class="Plus" @click="num++"><IconPlus /></button>
     <button class="Minus" @click="num--"><IconMinus /></button>
